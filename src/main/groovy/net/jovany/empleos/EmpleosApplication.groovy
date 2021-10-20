@@ -8,11 +8,11 @@ import org.springframework.stereotype.*;
 @Controller
 @SpringBootApplication
 class EmpleosApplication {
-
-	@RequestMapping("/home")
+	
+	@RequestMapping("/")
 	@ResponseBody
 	String home() {
-		return "home";
+		return "Hello World!";
 	}
 
 	static void main(String[] args) {
