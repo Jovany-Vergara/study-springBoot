@@ -69,42 +69,19 @@
     <div class="container">
         <h2 class="font-weight-bold text-center text-capitalize">DESTACADOS</h2>
         <hr>
-        <div class="row">
+        <div class="row" th:each="vacante : ${vacantes}">
             <div class="col-md-3">
-                <img class="rounded mx-auto d-block" th:src="@{/images/logo1.png}" alt="Generic placeholder image" width="220" height="220">
+                <img class="rounded mx-auto d-block" th:src="@{/images/{img} ( img= ${vacante.image} ) }" alt="Generic placeholder image" width="220" height="220">
             </div>
             <div class="col-md-9">
-                <h2>Arquitecto</h2>
-                <h6 class="card-title"><strong>Categoría: </strong> <span>Arquitectura</span></h6>
-                <h6 class="card-title"><strong>Publicado: </strong> <span>2019-01-01 </span></h6>
-                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                <h2 th:text="${vacante.nombre}"></h2>
+                <h6 class="card-title"><strong>Categoría: </strong> <span></span></h6>
+                <h6 class="card-title"><strong>Publicado: </strong> <span th:text="${vacante.fecha}"></span></h6>
+                <p th:text="${vacante.descripcion}"></p>
                 <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-3">
-                <img class="rounded mx-auto d-block" th:src="@{/images/logo2.png}" alt="Generic placeholder image" width="220" height="220">
-            </div>
-            <div class="col-md-9">
-                <h2>Ingeniero Agrónomo</h2>
-                <h6 class="card-title"><strong>Categoría: </strong> <span>Agronomía/Agrícultura</span></h6>
-                <h6 class="card-title"><strong>Publicado: </strong> <span>2019-01-05 </span></h6>
-                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <img class="rounded mx-auto d-block" th:src="@{/images/logo3.png}" alt="Generic placeholder image" width="220" height="220">
-            </div>
-            <div class="col-md-9">
-                <h2>Ejecutivo de Ventas</h2>
-                <h6 class="card-title"><strong>Categoría: </strong> <span>Ventas</span></h6>
-                <h6 class="card-title"><strong>Publicado: </strong> <span>2019-02-07 </span></h6>
-                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-            </div>
-        </div>
+        
         <hr>
     </div> <!-- /container -->
 

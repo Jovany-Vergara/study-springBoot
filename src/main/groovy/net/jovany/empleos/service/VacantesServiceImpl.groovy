@@ -32,7 +32,7 @@ class VacantesServiceImpl  implements IVacantesService {
       vacante2.setFecha(sdf.parse("10-03-2020"))
       vacante2.setSalario(7000.0)
       vacante2.setDestacado(0)
-      vacante2.setImage("empresa2.jpeg")
+      vacante2.setImage("empresa2.png")
 
       //Creamos la oferta 3
       Vacante vacante3 = new Vacante()
