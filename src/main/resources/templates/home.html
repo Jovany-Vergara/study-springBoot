@@ -78,7 +78,7 @@
                 <h6 class="card-title"><strong>Categoría: </strong> <span></span></h6>
                 <h6 class="card-title"><strong>Publicado: </strong> <span th:text="${vacante.fecha}"></span></h6>
                 <p th:text="${vacante.descripcion}"></p>
-                <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+                <p><a class="btn btn-secondary" th:href="@{/vacante/view/{id} ( id=${vacante.id} ) }" role="button">Detalles &raquo;</a></p>
             </div>
         </div>
         

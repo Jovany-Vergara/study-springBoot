@@ -26,9 +26,7 @@ class VacantesController {
 
   @GetMapping("/view/{id}")
   String verDetalle(@PathVariable("id") int idVacante, Model model){
-
     Vacante vacante = serviceVacantes.buscarPorId(idVacante)
-
     printf("Vacante: " + vacante)
     model.addAttribute("vacante", vacante)
 

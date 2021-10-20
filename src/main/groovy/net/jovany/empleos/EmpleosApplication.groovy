@@ -8,7 +8,7 @@ import org.springframework.stereotype.*;
 @Controller
 @SpringBootApplication
 class EmpleosApplication {
-	
+
 	@RequestMapping("/")
 	@ResponseBody
 	String home() {
