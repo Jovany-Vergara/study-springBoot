@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
+import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestParam
 
@@ -16,6 +17,24 @@ class VacantesController {
 
   @Autowired
   private IVacantesService serviceVacantes
+
+  @GetMapping("/create")
+  String crear(){
+    return "vacantes/formVacantes"
+  }
+
+  @PostMapping("/save")
+  String guardar(@RequestParam("nombre") String nombre, @RequestParam("descripcion") String descripcion, @RequestParam("estatus") String estatus, @RequestParam("fecha") String fecha, @RequestParam("destacado") int destacado, @RequestParam("salario") double salario, @RequestParam("detalles") String detalles ){
+    printf("Nombre Vacante: " + nombre)
+    printf("Descripcion: " + descripcion)
+    printf("Estatus: " + estatus)
+    printf("Fecha Publicacion: " + fecha)
+    printf("Nombre Vacante: " + nombre)
+    printf("Nombre Vacante: " + nombre)
+    printf("Nombre Vacante: " + nombre)
+    printf("Nombre Vacante: " + nombre)
+    return "vacantes/listVacantes"
+  }
 
   @GetMapping("/delete")
   String elemininar(@RequestParam("id") int idVacante, Model model){
