@@ -9,6 +9,8 @@ class Vacante {
   private Double salario
   private Integer destacado
   private String image="no-image.png"
+  private String estatus
+  private String detalles
 
   Integer getId() {
     return id
@@ -66,6 +68,22 @@ class Vacante {
     this.image = image
   }
 
+  String getEstatus() {
+    return estatus
+  }
+
+  void setEstatus(String estatus) {
+    this.estatus = estatus
+  }
+
+  String getDetalles() {
+    return detalles
+  }
+
+  void setDetalles(String detalles) {
+    this.detalles = detalles
+  }
+
   @Override
   public String toString() {
     return "Vacante{" +
@@ -74,6 +92,10 @@ class Vacante {
         ", descripcion='" + descripcion + '\'' +
         ", fecha=" + fecha +
         ", salario=" + salario +
+        ", destacado=" + destacado +
+        ", image='" + image + '\'' +
+        ", estatus='" + estatus + '\'' +
+        ", detalles='" + detalles + '\'' +
         '}';
   }
 }
