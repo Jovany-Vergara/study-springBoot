@@ -33,7 +33,7 @@ class VacantesController {
   }
 
   @GetMapping("/create")
-  String crear(){
+  String crear( Vacante vacante){
     return "vacantes/formVacante"
   }
   /*
