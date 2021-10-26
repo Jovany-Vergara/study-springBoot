@@ -17,8 +17,7 @@
 
 <body>
 
-<header th:insert="fragments/menu :: menu-principal">
-</header>
+<header th:insert="fragments/menu :: menu-principal"></header>
 
 <main role="main">
 	<hr>
@@ -27,7 +26,13 @@
 		<div class="card">
 			<h4 class="card-header"><strong>Datos de la categoría</strong></h4>
 			<div class="card-body">
-				<form th:action="@{/categorias/save}" method="post">
+				<form th:action="@{/categorias/save}" method="post" th:object="${categoria}">
+					<div th:if="${#fields.hasErrors('*')}"class='alert alert-danger' role='alert'>
+						Por favor corrija los siguientes errores:
+						<ul>
+							<li th:each="err : ${#fields.errors('*')}" th:text="${err}"/>
+						</ul>
+					</div>
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group">
@@ -53,8 +58,7 @@
 
 </main>
 
-<footer th:insert="fragments/footer :: pie-pagina" class="footer">
-</footer>
+<footer th:insert="fragments/footer :: pie-pagina" class="footer"></footer>
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
