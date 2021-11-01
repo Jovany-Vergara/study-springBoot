@@ -1,6 +1,7 @@
 package net.jovany.empleos.controller
 
 import net.jovany.empleos.model.Vacante
+import net.jovany.empleos.service.ICategoriasService
 import net.jovany.empleos.service.IVacantesService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.propertyeditors.CustomDateEditor
@@ -26,6 +27,9 @@ class VacantesController {
   @Autowired
   private IVacantesService serviceVacantes
 
+  @Autowired
+  ICategoriasService serviceCategorias
+
   @GetMapping("/index")
    String mostrarIndex(Model model) {
     List<Vacante> lista = serviceVacantes.buscarTodas();
@@ -34,7 +38,8 @@ class VacantesController {
   }
 
   @GetMapping("/create")
-  String crear( Vacante vacante){
+  String crear( Vacante vacante, Model model){
+    model.addAttribute("categorias", serviceCategorias.buscarTodas())
     return "vacantes/formVacante"
   }
   /*

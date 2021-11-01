@@ -43,6 +43,12 @@ class CategoriasServiceImpl implements ICategoriasService {
     cat5.setNombre("Educacion");
     cat5.setDescripcion("Maestros, tutores, etc");
 
+    // Categoria 6
+    Categoria cat6 = new Categoria();
+    cat5.setId(6);
+    cat5.setNombre("Developer");
+    cat5.setDescripcion("Trabajo para programadores");
+
     /**
      * Agregamos los 5 objetos de tipo Categoria a la lista ...
      */
@@ -51,6 +57,7 @@ class CategoriasServiceImpl implements ICategoriasService {
     lista.add(cat3);
     lista.add(cat4);
     lista.add(cat5);
+    lista.add(cat6);
 
   }
 
